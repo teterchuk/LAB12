@@ -4,7 +4,7 @@ public class RockExample {
     private int maxVersh;
     private int maxPerepad;
     private int lengthRoute;
-    private int[] route;
+
 
     public int getMaxVersh() {
         return maxVersh;
@@ -35,19 +35,26 @@ public class RockExample {
     }
 
     public void getRoute() {
+        int[] route = new int[lengthRoute];
+        route[0] = 0;
+        route[1] = 1;
+        int max = 1;
+        int min = 0;
+
+        System.out.print(route[0] + " ");
 
     }
 
 
-    private int positive (int localMax, int diff) {
+    private int up (int localMax, int diff) {
         if (localMax+diff > maxVersh) {
             return maxVersh;
         }
         else
             return localMax+diff;
     }
-    
-    private int negative (int localMin, int diff) {
+
+    private int down (int localMin, int diff) {
         if (localMin-diff < 0) {
             return 0;
         }
