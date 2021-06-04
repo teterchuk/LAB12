@@ -1,26 +1,63 @@
 package laba2;
 
 public class RockExample {
-    /** out
-     *
-     *        *
-     *       ***
-     *       ****   *
-     *     *******  ** ***
-     *    _***************
-     *    0224543211321222
-     */
-    public static final int [] example1 = new int[]{0,2,2,4,5,4,3,2,1,1,3,2,1,2,2,2};
+    private int maxVersh;
+    private int maxPerepad;
+    private int lengthRoute;
+    private int[] route;
 
-    /** out
-     *
-     *    *
-     *    *** *
-     *    ******
-     *    *******     *
-     *    ********   **    *
-     *    ********__****__**
-     *    655454320012310012
-     */
-    public static final int [] example2 = new int[]{6,5,5,4,5,4,3,2,0,0,1,2,3,1,0,0,1,2};
+    public int getMaxVersh() {
+        return maxVersh;
+    }
+
+    public void setMaxVersh(int maxVersh) {
+        this.maxVersh = maxVersh;
+    }
+
+    public int getMaxPerepad() {
+        return maxPerepad;
+    }
+
+    public void setMaxPerepad(int maxPerepad) {
+        this.maxPerepad = maxPerepad;
+    }
+
+    public int getLengthRoute() {
+        return lengthRoute;
+    }
+
+    public void setLengthRoute(int lengthRoute) {
+        if (lengthRoute > 2) {
+            this.lengthRoute = lengthRoute;
+        } else {
+            System.out.println("Длина пути не может быть меньше трех");
+        }
+    }
+
+    public void getRoute() {
+
+    }
+
+
+    private int positive (int max_f, int diff) {
+        if (max_f+diff > maxVersh) {
+            return maxVersh;
+        }
+        else
+            return max_f+diff;
+    }
+
+    // Если границы смещаются в отрицательный диапазон, то ограничить нулем
+    private int negative (int min_f, int diff) {
+        if (min_f-diff < 0) {
+            return 0;
+        }
+        else
+            return min_f-diff;
+    }
+
+
+    public RockExample(){
+
+    }
 }
