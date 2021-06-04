@@ -39,21 +39,20 @@ public class RockExample {
     }
 
 
-    private int positive (int max_f, int diff) {
-        if (max_f+diff > maxVersh) {
+    private int positive (int localMax, int diff) {
+        if (localMax+diff > maxVersh) {
             return maxVersh;
         }
         else
-            return max_f+diff;
+            return localMax+diff;
     }
-
-    // Если границы смещаются в отрицательный диапазон, то ограничить нулем
-    private int negative (int min_f, int diff) {
-        if (min_f-diff < 0) {
+    
+    private int negative (int localMin, int diff) {
+        if (localMin-diff < 0) {
             return 0;
         }
         else
-            return min_f-diff;
+            return localMin-diff;
     }
 
 
