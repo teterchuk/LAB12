@@ -53,7 +53,6 @@ public class RockExample {
 
             route[i] = Math.round((float)Math.random() * (b - a) + a);
 
-            //Ищем мин. и максимум двух соседних вершин
             if (route[i-1] > route[i]) {
                 max = route[i-1];
                 min = route[i];
